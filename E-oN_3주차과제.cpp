@@ -1,20 +1,17 @@
 #include<stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
 
 int tot( int * pa );
 
 main()
 {
-    int arr[6], *pa;
+    int arr[6];
 
     printf("6개의 숫자를 입력하시오: ");
 
-    for(int i=0; i<6; i++){ //6개의 수를 입력받고 배열에 저장 
-        scanf("%d", &arr[i]);
-    }
+    scanf("%d, %d, %d, %d, %d, %d", &arr[0], &arr[1], &arr[2], &arr[3], &arr[4], &arr[5], &arr[6]);
 
-    pa = &arr[0];   // 포인터 변수 pa에 배열의 첫번째 주소 저장
-
-    printf("합:%d", tot( pa ));
+    printf("합:%d", tot( arr ));
     
 }
 
