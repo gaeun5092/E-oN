@@ -2,7 +2,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 
-main()
+void main()
 {
 int arr[6];
 int i, j, sw, t, n;
