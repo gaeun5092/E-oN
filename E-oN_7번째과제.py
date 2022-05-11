@@ -18,30 +18,30 @@ class Library:
             print("5. 목록 출력")
             print("6. 저장")
             print("7. 프로그램 종료")
-            invalue = int(input("입력 : "))
+            num = int(input("입력 : "))
 
-            if invalue == 1:
-                self.Addbook() #추가
-            elif invalue == 2:
-                self.search_book() #검색
-            elif invalue == 3:
-                self.modify() #수정
-            elif invalue == 4:
-                self.DeleteBook() #삭제
-            elif invalue == 5:
-                self.ShowBook() #목록 확인
-            elif invalue == 6:
-                self.Save() #저장
-            elif invalue == 7:
-                self.finish_library() #자동 저장 종료
+            if num == 1:
+                self.Add()
+            elif num == 2:
+                self.search()
+            elif num == 3:
+                self.modify()
+            elif num == 4:
+                self.del()
+            elif num == 5:
+                self.show()
+            elif num == 6:
+                self.Save()
+            elif num == 7:
+                self.fin()
             else:
-                print("1부터 7까지의 숫자만 입력하세요.")
+                print("1과 7사이 숫자만 입력하세요.")
                 return self.Menu()
         except ValueError:
-            print("잘못입력하셨습니다.")
+            print("다시 입력해주세요.")
             return self.Menu()    
 
-    def Addbook(self):
+    def Add(self):
         print("도서 추가")
         print("도서명 저자 출판연도 출판사명 장르")
         Addinput = list(map(str,input("입력 : ").split()))
@@ -50,7 +50,7 @@ class Library:
         print("도서가 추가되었습니다")
         return self.Menu()
 
-    def search_book(self):
+    def search(self):
         print("1.도서명 2.저자 3.출판년도 4.출판사명 5.장르(이외의 입력은 메뉴로 돌아가용)")
         search_num = int(input("숫자입력 : "))
         if search_num == 1:
@@ -64,7 +64,7 @@ class Library:
                 return self.Menu()
             else:
                 print("검색을 계속합니다.")
-                return self.search_book()
+                return self.search()
         elif search_num == 2:
             author_1 = str(input("저자 입력 : "))
             for i in range(len(self.Booklist)):
@@ -76,7 +76,7 @@ class Library:
                 return self.Menu()
             else:
                 print("검색을 계속합니다.")
-                return self.search_book()
+                return self.search()
         elif search_num == 3:
             published_1 = str(input("출판년도 입력 : "))
             for i in range(len(self.Booklist)):
@@ -88,7 +88,7 @@ class Library:
                 return self.Menu()
             else:
                 print("검색을 계속합니다.")
-                return self.search_book()
+                return self.search()
         elif search_num == 4:
             publisher_1 = str(input("출판사 입력 : "))
             for i in range(len(self.Booklist)):
@@ -100,20 +100,20 @@ class Library:
                 return self.Menu()
             else:
                 print("검색을 계속합니다.")
-                return self.search_book()
+                return self.search()
         elif search_num == 5:
             genre_1 = str(input("장르 입력 : "))
             for i in range(len(self.Booklist)):
                 if genre_1 == self.Booklist[i][4]:
                     print(self.Booklist[i])
-            return self.search_book()
+            return self.search()
             choice5 = input("1.메뉴로 돌아갑니다.\n 1 이외의 값은 검색으로 돌아갑니다. \n입력: ")
             if choice5 == 1:
                 print("메뉴로 돌아갑니다.")
                 return self.Menu()
             else:
                 print("검색을 계속합니다.")
-                return self.search_book()    
+                return self.search()    
         else:
             return self.Menu()
     def modify(self):
@@ -124,7 +124,7 @@ class Library:
                 print("수정할 정보입력")
                 UserInput_MDY = list(map(str, input("도서명 저자 출판일 출판사명 장르 (입력) :").split()))
                 del self.Booklist[i]
-                self.Booklist.insert(i, UserInput_MDY) ##i번째에 있는 정보를 삭제하고 그 자리에 변경한 정보를 끼워넣는다.
+                self.Booklist.insert(i, UserInput_MDY) 
                 print("수정 완료")
                 return self.Menu()
             else:
@@ -133,7 +133,7 @@ class Library:
         return self.Menu()
         
 
-    def DeleteBook(self):
+    def del(self):
         print("도서 삭제")
         UserInput = str(input("도서명 입력 : "))
         for i in range(len(self.Booklist)):
@@ -146,7 +146,7 @@ class Library:
                     print("목록에 없는 도서입니다.")
         return self.Menu()
 
-    def ShowBook(self):
+    def show(self):
         for i in range(len(self.Booklist)):
             print(self.Booklist[i])
         value = input("아무키나 입력하고 엔터를 누르면 메뉴로 돌아갑니다.")
@@ -155,7 +155,7 @@ class Library:
         else:
             return self.Menu()
 
-    def finish_library(self):
+    def fin(self):
         print("프로그램을 종료합니다.")
         sys.exit
 
