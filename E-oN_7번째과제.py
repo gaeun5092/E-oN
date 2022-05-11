@@ -51,14 +51,14 @@ class Library:
         return self.Menu()
 
     def search(self):
-        print("1.도서명 2.저자 3.출판년도 4.출판사명 5.장르(이외의 입력은 메뉴로 돌아가용)")
+        print("1.도서명 2.저자 3.출판년도 4.출판사명 5.장르")
         search_num = int(input("숫자입력 : "))
         if search_num == 1:
             title_1 = str(input("도서명 입력 : "))
             for i in range(len(self.Booklist)):
                 if title_1 == self.Booklist[i][0]:                    
                     print(self.Booklist[i])
-            choice1 = input("1.메뉴로 돌아갑니다.\n 1 이외의 값은 검색으로 돌아갑니다. \n입력: ") #바로 메뉴로 돌아가면 출력 보기가 조금 힘들어서 쉬어가는 구간
+            choice1 = input("1.메뉴로 돌아갑니다.\n 1 이외의 값은 검색으로 돌아갑니다. \n입력: ")
             if choice1 == 1:
                 print("메뉴로 돌아갑니다.")
                 return self.Menu()
