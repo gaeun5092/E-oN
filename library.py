@@ -1,3 +1,4 @@
+from re import M
 import fileopen
 booklist = fileopen.books
 
@@ -65,28 +66,28 @@ def change_book():
     name = int(input('수정할 책 제목 입력\n'))
 
     for i in range(len(booklist)) :
-        if(name == data[i][0]):
-            idx == i
+        if(name == booklist[i][0]):
+            m = i
     menu = int(input('수정할 메뉴 번호를 입력해주세요 \n 1. 도서명 2. 저자 3. 출판연도 4. 출판사명 5. 장르'))
 
     if menu == 1:
-        booklist[idx][0] = input("\n도서명 입력")
+        booklist[m][0] = input("\n도서명 입력")
         
     
     elif menu == 2:
-        booklist[idx][1] = input("\n저자 입력")
+        booklist[m][1] = input("\n저자 입력")
         
 
     elif menu == 3:
-        booklist[idx][2] = input("\출판연도 입력")
+        booklist[m][2] = input("\출판연도 입력")
 
 
     elif menu == 4:
-        booklist[idx][3] = input("\n출판사명 입력")
+        booklist[m][3] = input("\n출판사명 입력")
 
 
     elif menu == 5:
-        booklist[idx][4] = input("\n장르 입력")
+        booklist[m][4] = input("\n장르 입력")
 
     
 def delete_book() :
@@ -94,23 +95,24 @@ def delete_book() :
 
     
     for i in range(len(booklist)) :
-        if(name == data[i][0]):
-            idx == i
-    del booklist[idx]
+        if(name == booklist[i][0]):
+            M == i
+    del booklist[M]
 
 
-def print_book() :
+def show_book() :
     for i in range(len(booklist)) :
-        print(i+1, data[i][0], data[i][1], data[i][2], data[i][3], data[i][4])
+        print(i+1, booklist[i][0], booklist[i][1], booklist[i][2], booklist[i][3], booklist[i][4])
 
 
 def save_book() :
         with open('c:/input.txt', "w") as w :
-            w.write(booklist[i][0])
-            w.write(booklist[i][1])
-            w.write(booklist[i][2])
-            w.write(booklist[i][3])
-            w.write(booklist[i][4])
+            for i in range(len(booklist)) :
+                w.write(booklist[i][0])
+                w.write(booklist[i][1])
+                w.write(booklist[i][2])
+                w.write(booklist[i][3])
+                w.write(booklist[i][4])
 
 def exit_book() :
     
