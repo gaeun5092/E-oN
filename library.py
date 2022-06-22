@@ -68,26 +68,26 @@ def change_book():
     for i in range(len(booklist)) :
         if(name == booklist[i][0]):
             m = i
-    menu = int(input('수정할 메뉴 번호를 입력해주세요 \n 1. 도서명 2. 저자 3. 출판연도 4. 출판사명 5. 장르'))
+        menu = int(input('수정할 메뉴 번호를 입력해주세요 \n 1. 도서명 2. 저자 3. 출판연도 4. 출판사명 5. 장르'))
 
-    if menu == 1:
-        booklist[m][0] = input("\n도서명 입력")
+        if menu == 1:
+            booklist[m][0] = input("\n도서명 입력")
         
     
-    elif menu == 2:
-        booklist[m][1] = input("\n저자 입력")
+        elif menu == 2:
+            booklist[m][1] = input("\n저자 입력")
         
 
-    elif menu == 3:
-        booklist[m][2] = input("\출판연도 입력")
+        elif menu == 3:
+            booklist[m][2] = input("\출판연도 입력")
 
 
-    elif menu == 4:
-        booklist[m][3] = input("\n출판사명 입력")
+        elif menu == 4:
+            booklist[m][3] = input("\n출판사명 입력")
 
 
-    elif menu == 5:
-        booklist[m][4] = input("\n장르 입력")
+        elif menu == 5:
+            booklist[m][4] = input("\n장르 입력")
 
     
 def delete_book() :
