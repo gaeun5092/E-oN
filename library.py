@@ -1,4 +1,3 @@
-from re import M
 import fileopen
 booklist = fileopen.books
 
@@ -95,9 +94,9 @@ def delete_book() :
 
     
     for i in range(len(booklist)) :
-        if(name == booklist[i][0]):
-            M == i
-    del booklist[M]
+        if(name == booklist[i][0]) :
+            m == i
+        del booklist[m] 
 
 
 def show_book() :
